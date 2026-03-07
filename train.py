@@ -1,6 +1,6 @@
 import tensorflow as tf
 import streamlit as st
-from model.cnn_model import create_model
+from cnn_model import create_model
 
 
 class StreamlitProgress(tf.keras.callbacks.Callback):
@@ -26,5 +26,6 @@ def train_model(train_data, val_data, num_classes, epochs=50):
         epochs=epochs,
         callbacks=[progress_callback]
     )
+
 
     return model
