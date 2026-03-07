@@ -2,9 +2,7 @@ import streamlit as st
 import numpy as np
 import tempfile
 import os
-from data import load_data
-from train import train_model
-from predict import predict_image
+
  
 
 st.title("Teachable Machine Image Classifier")
@@ -30,6 +28,9 @@ if class_input:
 
    
     if st.button("Train Model"):
+        from data import load_data
+        from train import train_model
+        from predict import predict_image
         if not uploaded_files_by_class:
             st.warning("Please upload files for at least one class")
         else:
@@ -85,3 +86,4 @@ else:
             confidence = pred_probs[pred_class] * 100  # convert to percentage
 
             st.write(f"Confidence: {confidence:.2f}%")
+
