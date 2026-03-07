@@ -2,9 +2,9 @@ import streamlit as st
 import numpy as np
 import tempfile
 import os
-from utils.data import load_data
-from model.train import train_model
-from model.predict import predict_image
+from data import load_data
+from train import train_model
+from predict import predict_image
  
 
 st.title("Teachable Machine Image Classifier")
@@ -83,4 +83,5 @@ else:
             st.image(file, width = 400)
             st.write(f"Predicted : {pred_class}")
             confidence = pred_probs[pred_class] * 100  # convert to percentage
+
             st.write(f"Confidence: {confidence:.2f}%")
