@@ -24,8 +24,7 @@ def train_model(train_data, val_data, num_classes, epochs=50):
         train_data,
         validation_data=val_data,
         epochs=epochs,
-        callbacks=[progress_callback]
-    )
+        callbacks=[progress_callback])
 
 
     return model
