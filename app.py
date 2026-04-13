@@ -80,7 +80,7 @@ else:
 
         for file in uploaded_test_files:
             st.success("Prediction")
-            pred_class, pred_probs = predict_image(model, file, class_names)
+            pred_class, pred_probs = predict_image(model, upload_test_files, class_names)
             st.image(file, width = 400)
             st.write(f"Predicted : {pred_class}")
             confidence = pred_probs[pred_class] * 100  # convert to percentage
